@@ -125,6 +125,10 @@ a:hover {
 	padding-top: 64px;
 	padding-bottom: 64px;
 }
+.footer img:hover {
+	cursor: pointer;
+	opacity: 0.6;
+}
 .footer img:not(:last-child) {
 	margin-right: 40px;
 }
