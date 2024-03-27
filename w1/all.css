@@ -125,12 +125,15 @@ a:hover {
 	padding-top: 64px;
 	padding-bottom: 64px;
 }
+.footer .contact > li {
+	display: inline-block;
+}
+.footer .contact > li:not(:last-child) {
+	margin-right: 40px;
+}
 .footer img:hover {
 	cursor: pointer;
 	opacity: 0.6;
-}
-.footer img:not(:last-child) {
-	margin-right: 40px;
 }
 
 
