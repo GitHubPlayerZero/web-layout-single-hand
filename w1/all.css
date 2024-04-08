@@ -41,7 +41,12 @@ a:hover {
 
 
 .container {
-	max-width: 1296px;
+	max-width: 1320px;
+	
+	/* Gutter on outside */
+	padding-left: 12px;
+	padding-right: 12px;
+	
 	margin-left: auto;
 	margin-right: auto;
 }
