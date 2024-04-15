@@ -1,0 +1,332 @@
+/* Debug */
+/* div, ul {
+	outline-style: solid;
+} */
+
+
+/* Reset */
+*, *::before, *::after {
+	/* Box model */
+	box-sizing: border-box;
+	
+	/* Debug */
+	/* outline: 1px dashed blue; */
+}
+
+img {
+	/* 自動適應視窗大小 */
+	max-width: 100%;
+	height: auto;
+	
+	/* 去除底部多餘空白 */
+	vertical-align: middle;
+}
+
+
+
+/* Base */
+:root {
+	--content-width: 1296;	/* Grid count (12) * Grid width (86px) + Gutter count (12 - 1) * Gutter width (24px) */
+	--width-half: calc(636 / var(--content-width) * 100%);
+	--width-526: calc(526 / var(--content-width) * 100%);
+}
+
+body {
+	font-family: "Bruno Ace SC", sans-serif;
+	line-height: 1.5;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+
+.container {
+	/* Width = --content-width + Gutter on outside (24px) */
+	/* max-width: 1320px; */
+	/* 加法似乎要雙方都有單位才能正常運算，乘以 1px 是為了賦予單位，否則會沒有效果 */
+	max-width: calc(var(--content-width) * 1px + 24px);
+	
+	/* Gutter on outside */
+	padding-right: 12px;
+	padding-left: 12px;
+	
+	/* 水平置中 */
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+/* 元件 Components */
+.btn {
+	display: flex;
+	align-items: center;
+	padding: 12px 30px 12px 24px;
+	border-radius: 32px;
+}
+.btn.white {
+	background-color: white;
+	color: black;
+}
+.btn.black {
+	background-color: black;
+	color: white;
+}
+.btn-text {
+	margin-right: 9px;
+}
+.btn:hover {
+	opacity: 0.7;
+}
+
+
+
+/* Header */
+.header {
+	background-color: black;
+	color: white;
+}
+
+/* Navigation bar */
+.header-nav {
+	color: #D1D1D1;
+	display: flex;
+	justify-content: space-between;
+}
+.header-nav > li {
+	/* flex 裡的元素，其 align-items 預設為 stretch，即高度會被拉長至 100%，利用此一特性可將 a 元素拉長以利點擊。 */
+	display: flex;
+}
+.header-nav > li > a {
+	/* 讓 a 元素高度為 100% 的另一個做法，是將本身設為 flex，然後設定高度為 100%。 */
+	/* display: flex;
+	height: 100%; */
+	
+	padding-top: 40px;
+}
+
+/* Banner */
+.banner {
+	padding-top: 72px;
+	padding-bottom: 72px;
+	
+	display: flex;
+	align-items: center;
+}
+.banner-photo {
+	margin-right: 24px;
+	
+	/*
+		固定值：
+		不會隨著父層的縮小而縮小。
+		若有設定 max-width: 100%，只有當父層的寬度小於設定值才會開始縮小。
+		若想要隨著父層的縮小而馬上縮小，就要設定成百分比。
+	*/
+	/* width: 636px; */
+	
+	/*
+		百分比值：
+		width 最後想得到百分比值，因此乘上 100%。
+		這樣的話計算時不可加上 px 單位，會造成計算無效。
+		猜測可能是因為有兩種單位，無法判斷以哪種單位為主，因此造成錯誤...
+	*/
+	/* width: calc(636px / 1296px * 100%); */	/* 加上 px 單位會造成計算無效 */
+	/* width: calc(636 / 1296 * 100%); */
+	width: var(--width-half);	/* 改用預先設定的變數 */
+}
+.banner-content {
+	/*
+		雖然 width 直接固定大小，但因為其父層為 flex，所以還是可以隨著父層縮小而縮小（除非有無法縮小的元素就會破版）。
+		這是因為 flex box 裡的元素，其 flex-shrink 預設值為 1，即代表會自動壓縮大小。
+	*/
+	/* width: 636px; */
+	width: var(--width-half);	/* 改用預先設定的變數 */
+	
+	display: flex;
+	flex-direction: column;
+}
+.banner-title {
+	color: #00FFA3;
+	font-size: 128px;
+	align-self: flex-end;
+}
+
+.banner .btn {
+	align-self: flex-end;
+}
+
+
+
+/* Introduction */
+.intro {
+	background-image: url("./images/background-img.png");
+	background-size: cover;
+	background-position: center;
+	
+	padding-top: 160px;
+	padding-bottom: 160px;
+	
+	color: white;
+}
+
+/* Description */
+.intro-desc {
+	width: var(--width-526);
+	margin-right: 24px;
+}
+.intro-desc-title {
+	font-size: 64px;
+	margin-bottom: 36px;
+}
+.intro-desc-text {
+	font-size: 24px;
+	margin-bottom: 32px;
+}
+.intro-desc-decoration {
+	display: flex;
+	column-gap: 16px;
+}
+.intro-desc-decoration img {
+	width: 32px;
+}
+
+/* Photos */
+.intro-photo {
+	display: flex;
+	column-gap: 24px;
+	width: 58%;
+}
+
+
+
+/* About me */
+.about {
+	padding-top: 160px;
+	padding-bottom: 160px;
+	color: #15161D;
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* Card */
+.about-card {
+	width: var(--width-half);
+	
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
+}
+.about-card > li {
+	width: calc(50% - 12px);
+	border: 1px solid #E3E3E3;
+	box-shadow: 4px 4px 4px rgb(0, 0, 0, 0.08);
+	
+	display: flex;
+	flex-direction: column;
+	row-gap: 4px;
+}
+.about-card-title {
+	font-size: 20px;
+}
+
+/* Description */
+.about-desc {
+	width: var(--width-526);
+}
+.about-desc-title {
+	color: black;
+	font-size: 64px;
+	margin-bottom: 36px;
+}
+.about-desc-text {
+	font-size: 24px;
+}
+
+
+
+/* Contact me */
+.contact {
+	background-image: linear-gradient(rgb(5, 0, 20), rgb(1, 2, 30, 0.89));
+	color: white;
+	padding-top: 96px;
+	padding-bottom: 96px;
+}
+.contact-layout {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.contact-content {
+	display: flex;
+	align-items: center;
+	column-gap: 28.5px;
+}
+.contact-method {
+	display: flex;
+	column-gap: 20px;
+}
+.contact-method > img {
+	border-radius: 40px;
+	box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.08);
+}
+.contact-method > img:hover {
+	box-shadow: 0 0 16px 3px rgba(144, 148, 255, 0.9), 0 4px 4px rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+}
+
+
+
+/* My projects */
+.project {
+	padding-top: 160px;
+	padding-bottom: 160px;
+}
+.project-title {
+	font-size: 64px;
+	width: calc(746 / var(--content-width) * 100%);
+	margin-left: auto;
+	margin-bottom: 16px;
+}
+.project-desc {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start
+}
+
+
+
+/* Footer */
+.footer {
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+
+
+/* Utility */
+.d-flex {
+	display: flex;
+}
+
+.fs-64 {
+	font-size: 64px;
+}
+
+.mr-24 {
+	margin-right: 24px;
+}
+
+.mb-28 {
+	margin-bottom: 28px;
+}
