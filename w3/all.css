@@ -1,0 +1,721 @@
+/* Debug */
+/* div, ul {
+	outline-style: solid;
+} */
+
+
+/* Reset */
+*, *::before, *::after {
+	/* Box model */
+	box-sizing: border-box;
+
+	/* Debug */
+	/* outline: 1px dashed blue; */
+}
+
+img {
+	/* 自動適應視窗大小 */
+	max-width: 100%;
+	height: auto;
+
+	/* 去除底部多餘空白 */
+	vertical-align: middle;
+}
+
+textarea {
+	/* 去除底部多餘空白 */
+	vertical-align: middle;
+}
+
+
+
+/* Base */
+:root {
+	/* Color */
+	--color-primary: #AA0601;
+	--color-secondary: #650300;
+	--color-light: #FBF2F2;
+	--color-gray: #707070;
+	
+	/* Grid */
+	--gutter-half: 12px;
+	--gutter-half-negative: calc(var(--gutter-half) * -1);
+}
+
+body {
+	font-family: "Noto Sans TC", sans-serif;
+	line-height: 1.5;
+}
+
+/* 連結樣式 */
+a {
+	text-decoration: none;
+	color: inherit;
+}
+a:hover {
+	opacity: 0.7;
+}
+
+/* 按鈕樣式 */
+button, input[type=button] {
+	font-family: inherit;
+	font-size: inherit;
+	cursor: pointer;
+}
+button:hover, input[type=button]:hover {
+	opacity: 0.7;
+}
+
+
+/* Container */
+.container {
+	max-width: 1320px;
+	
+	/* Gutter on outside */
+	padding-left: var(--gutter-half);
+	padding-right: var(--gutter-half);
+	
+	/* 水平置中 */
+	margin-left: auto;
+	margin-right: auto;
+	
+	/* 平板：768px ~ 991px */
+	@media (max-width: 991px) {
+		max-width: 720px;
+	}
+	
+	/* 手機：767px 以下 */
+	@media (max-width: 767px) {
+		max-width: 372px;
+	}
+}
+
+
+
+/* Grid */
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	
+	margin-left: var(--gutter-half-negative);
+	margin-right: var(--gutter-half-negative);
+}
+
+/* .row 會為所有子層元素加上左右 padding，因此下一層只能放 .col */
+.row > * {
+	padding-left: var(--gutter-half);
+	padding-right: var(--gutter-half);
+}
+
+.col-1 {
+	width: 8.333%;
+}
+.col-2 {
+	width: 16.667%;
+}
+.col-3 {
+	width: 25%;
+}
+.col-4 {
+	width: 33.333%;
+}
+.col-5 {
+	width: 41.667%;
+}
+.col-6 {
+	width: 50%;
+}
+.col-7 {
+	width: 58.333%;
+}
+.col-8 {
+	width: 66.667%;
+}
+.col-9 {
+	width: 75%;
+}
+.col-10 {
+	width: 83.333%;
+}
+.col-11 {
+	width: 91.667%;
+}
+.col-12 {
+	width: 100%;
+}
+
+/* Pad */
+@media (max-width: 991px) {
+	.col-md-1 {
+		width: 8.333%;
+	}
+	.col-md-2 {
+		width: 16.667%;
+	}
+	.col-md-3 {
+		width: 25%;
+	}
+	.col-md-4 {
+		width: 33.333%;
+	}
+	.col-md-5 {
+		width: 41.667%;
+	}
+	.col-md-6 {
+		width: 50%;
+	}
+	.col-md-7 {
+		width: 58.333%;
+	}
+	.col-md-8 {
+		width: 66.667%;
+	}
+	.col-md-9 {
+		width: 75%;
+	}
+	.col-md-10 {
+		width: 83.333%;
+	}
+	.col-md-11 {
+		width: 91.667%;
+	}
+	.col-md-12 {
+		width: 100%;
+	}
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+	.col-sm-1 {
+		width: 25%;
+	}
+	.col-sm-2 {
+		width: 50%;
+	}
+	.col-sm-3 {
+		width: 75%;
+	}
+	.col-sm-4 {
+		width: 100%;
+	}
+}
+
+
+
+/* Layout */
+/* header */
+.header {
+	background-color: var(--color-primary);
+	color: white;
+}
+.header-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.header-logo {
+	width: 80px;
+}
+.header-menu {
+	display: flex;
+	font-size: 20px;
+	column-gap: 64px;
+}
+.header-menu a {
+	display: block;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.header-menu-mobile {
+	display: none;
+	flex-wrap: wrap;
+	color: white;
+}
+.header-menu-mobile > li {
+	width: 50%;
+	border: 1px solid white;
+}
+.header-menu-mobile > li > a {
+	display: block;
+	text-align: center;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+	.header-logo {
+		padding-top: 16px;
+		padding-bottom: 16px;
+	}
+	
+	/* 顯示手機版菜單 */
+	.header-menu {
+		display: none;
+	}
+	.header-menu-mobile {
+		display: flex;
+	}
+}
+
+
+/* footer */
+.footer {
+	background-color: var(--color-primary);
+	color: white;
+	padding-top: 48px;
+	padding-bottom: 32px;
+}
+.footer-menu {
+	display: flex;
+	column-gap: 48px;
+}
+.footer-menu a {
+	display: flex;
+	height: 100%;
+	align-items: center;
+}
+.footer-social {
+	display: flex;
+	column-gap: 32px;
+}
+.footer-social img {
+	width: 48px;
+	height: 48px;
+}
+
+/* Pad */
+@media (max-width: 991px) {
+	.footer-social {
+		column-gap: 16px;
+	}
+	.footer-social img {
+		width: 40px;
+		height: 40px;
+	}
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+	.footer-menu {
+		display: none;
+	}
+	.footer-social {
+		column-gap: 8px;
+	}
+	.footer-social img {
+		width: 24px;
+		height: 24px;
+	}
+}
+
+
+/* Banner */
+.banner {
+	background-image: url("./images/home-header.png");
+	background-size: cover;
+	padding-top: 296px;
+	padding-bottom: 296px;
+	
+	/* Pad */
+	@media (max-width: 991px) {
+		background-image: url("./images/home-header-sm.png");
+	}
+	
+	/* Mobile */
+	@media (max-width: 767px) {
+		padding-top: 144px;
+		padding-bottom: 144px;
+	}
+}
+
+
+/* 聯名設計鏡框 */
+.co-branded {
+	background-image: url('./images/index-bg.png');
+	background-size: cover;
+	
+	/* Pad */
+	@media (max-width: 991px) {
+		background-image: url('./images/index-bg-md.png');
+		
+	}
+	
+	/* Mobile */
+	@media (max-width: 767px) {
+		background-image: url('./images/index-bg-sm.png');
+		
+	}
+}
+
+
+/* 意見反應 */
+.feedback {
+	resize: none;
+	height: 136px;
+}
+
+
+
+/* Components */
+/* 主要按鈕 */
+.btn-primary {
+	background-color: var(--color-primary);
+	color: white;
+	display: inline-block;
+	border: none;
+}
+
+/* 標題 */
+.title {
+	color: var(--color-secondary);
+	font-size: 48px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 48px;
+	
+	/* Mobile */
+	@media (max-width: 767px) {
+		font-size: 24px;
+		margin-bottom: 24px;
+	}
+}
+
+/* 區塊 */
+.section {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	
+	/* Mobile */
+	@media (max-width: 767px) {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+}
+
+
+/* 表單元素 */
+.input {
+	width: 100%;
+	background-color: transparent;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 6px 12px;
+	border: 1px solid black;
+}
+
+.checkbox {
+	width: 18px;
+	height: 18px;
+	accent-color: var(--color-primary);
+}
+
+
+/* 卡片 - 口號 */
+.card-slogan-image {
+	width: 100px;
+	height: 100px;
+	margin-bottom: 16px;
+	
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.card-slogan-title {
+	font-size: 24px;
+	font-weight: bold;
+	color: var(--color-secondary);
+	text-align: center;
+	margin-bottom: 8px;
+}
+
+/* 卡片 - 產品 */
+.card-product-image {
+	display: block;
+	margin-bottom: 8px;
+}
+.card-product-title {
+	font-size: 48px;
+	color: var(--color-primary);
+	font-style: italic;
+	font-weight: bold;
+	font-family: "Roboto", sans-serif;
+	text-align: center;
+}
+
+/* 卡片 - 顧客推薦 */
+.card-customer {
+	display: flex;
+	flex-direction: column;
+	height: 511px;
+	
+	border: 1px solid #DEE2E6;
+	border-radius: 4px;
+	
+	box-shadow: 0 2px 6px #00000029;
+}
+.card-customer-desc {
+	padding: 16px;
+	flex-grow: 1;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.card-customer-name {
+	font-weight: 500;
+	margin-bottom: 8px;
+}
+.card-customer-time {
+	font-size: 14px;
+	color: var(--color-gray);
+}
+
+
+
+/* Utility */
+/* Color */
+.bg-light {
+	background-color: var(--color-light);
+}
+.bg-white {
+	background-color: white;
+}
+
+.text-secondary {
+	color: var(--color-secondary);
+}
+.text-white {
+	color: white;
+}
+
+
+/* Text */
+.font-roboto {
+	font-family: "Roboto", sans-serif;
+}
+
+.fw-medium {
+	font-weight: 500;
+}
+.bold {
+	font-weight: bold;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.vertical-align-bottom {
+	vertical-align: bottom;
+}
+
+.fs-14 {
+	font-size: 14px;
+}
+.fs-20 {
+	font-size: 20px;
+}
+.fs-36 {
+	font-size: 36px;
+}
+.fs-48 {
+	font-size: 48px;
+}
+.fs-64 {
+	font-size: 64px;
+}
+
+/* Pad */
+@media (max-width: 991px) {
+	.fs-md-16 {
+		font-size: 16px;
+	}
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+	.fs-sm-16 {
+		font-size: 16px;
+	}
+	.fs-sm-24 {
+		font-size: 24px;
+	}
+}
+
+
+/* Spacing */
+/* padding */
+.py-6 {
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+.py-8 {
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+.py-16 {
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+.px-12 {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+/* margin */
+.me-16 {
+	margin-right: 16px;
+}
+
+.mb-4 {
+	margin-bottom: 4px;
+}
+.mb-8 {
+	margin-bottom: 8px;
+}
+.mb-16 {
+	margin-bottom: 16px;
+}
+.mb-24 {
+	margin-bottom: 24px;
+}
+.mb-32 {
+	margin-bottom: 32px;
+}
+.mb-48 {
+	margin-bottom: 48px;
+}
+
+.ms-4 {
+	margin-left: 4px;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+	.mb-sm-8 {
+		margin-bottom: 8px;
+	}
+	.mb-sm-16 {
+		margin-bottom: 16px;
+	}
+	.mb-sm-24 {
+		margin-bottom: 24px;
+	}
+}
+
+
+/* gap */
+.row-gap-24 {
+	row-gap: 24px;
+}
+
+.col-gap-48 {
+	column-gap: 48px;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+	.row-gap-sm-8 {
+		row-gap: 8px;
+	}
+	.row-gap-sm-16 {
+		row-gap: 16px;
+	}
+}
+
+
+
+/* Flexbox */
+.d-flex {
+	display: flex;
+}
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.flex-direction-row {
+	flex-direction: row;
+}
+.flex-direction-row-reverse {
+	flex-direction: row-reverse;
+}
+.flex-direction-column {
+	flex-direction: column;
+}
+
+.justify-content-start {
+	justify-content: flex-start;
+}
+.justify-content-center {
+	justify-content: center;
+}
+.justify-content-end {
+	justify-content: flex-end;
+}
+.justify-content-between {
+	justify-content: space-between;
+}
+
+.align-items-start {
+	align-items: flex-start;
+}
+.align-items-center {
+	align-items: center;
+}
+.align-items-end {
+	align-items: flex-end;
+}
+
+/* Pad */
+@media (max-width: 991px) {
+	.flex-direction-md-column {
+		flex-direction: column;
+	}
+	.align-items-md-center{
+		align-items: center;
+	}
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+	.d-sm-flex {
+		display: flex;
+	}
+	.flex-direction-sm-column {
+		flex-direction: column;
+	}
+}
+
+
+/* Other */
+.d-block {
+	display: block;
+}
+.d-none {
+	display: none;
+}
+
+.border-bottom-none {
+	border-bottom: none;
+}
+
+.h-100 {
+	height: 100%;
+}
+
+.w-50 {
+	width: 50%;
+}
+.w-100 {
+	width: 100%;
+}
+
+/* Pad */
+@media (max-width: 991px) {
+	.w-md-100 {
+		width: 100%;
+	}
+}
