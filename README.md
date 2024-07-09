@@ -10,8 +10,8 @@
 - 單欄式
 - 風格：語意化
 
-#### Demo
 [Vito demo.webm](https://github.com/GitHubPlayerZero/web-layout-single-hand/assets/65072506/ea97f557-75d7-402d-bb1e-d3ac7b1872d9)
+
 <br>
 
 ### 📝 第二週作業：William 的個人網頁
@@ -30,8 +30,8 @@
 - [box-shadow](https://codepen.io/codepenplayer/pen/rNQKYMv)
 - [linear-gradient](https://codepen.io/codepenplayer/pen/ZEmjqWE)
 
-#### Demo
 [Willam demo.webm](https://github.com/GitHubPlayerZero/web-layout-single-hand/assets/65072506/1897670a-e66d-4d9d-9c1a-418614ac8d73)
+
 <br>
 
 ### 📝 第三週作業：眼鏡官網 (首頁)
@@ -46,13 +46,6 @@
 - [resize](https://codepen.io/codepenplayer/pen/JjQjGMB)
 - [accent-color](https://codepen.io/codepenplayer/pen/mdZdEKK)
 
-#### Demo
-- 桌機
 [Glasses demo desktop.webm](https://github.com/GitHubPlayerZero/web-layout-single-hand/assets/65072506/24a45a05-c70e-4d58-b932-063e10851e9f)
 
-- 平板
-![Glass pad](https://github.com/GitHubPlayerZero/web-layout-single-hand/assets/65072506/2614ca0d-e343-4e7e-90db-da1a3b77a57b)
-
-- 手機
-![Glass mobile](https://github.com/GitHubPlayerZero/web-layout-single-hand/assets/65072506/6391cb9d-7cb9-4102-af02-73fe2a051b5e)
 <br>
