@@ -10,7 +10,7 @@
 - 單欄式
 - 風格：語意化
 
-[Vito demo.webm](https://github.com/GitHubPlayerZero/web-layout-single-hand/assets/65072506/ea97f557-75d7-402d-bb1e-d3ac7b1872d9)
+[Demo](https://github.com/GitHubPlayerZero/web-layout-single-hand/assets/65072506/ea97f557-75d7-402d-bb1e-d3ac7b1872d9)
 
 <br>
 
@@ -30,7 +30,7 @@
 - [box-shadow](https://codepen.io/codepenplayer/pen/rNQKYMv)
 - [linear-gradient](https://codepen.io/codepenplayer/pen/ZEmjqWE)
 
-[Willam demo.webm](https://github.com/GitHubPlayerZero/web-layout-single-hand/assets/65072506/1897670a-e66d-4d9d-9c1a-418614ac8d73)
+[Demo](https://github.com/GitHubPlayerZero/web-layout-single-hand/assets/65072506/1897670a-e66d-4d9d-9c1a-418614ac8d73)
 
 <br>
 
@@ -46,6 +46,8 @@
 - [resize](https://codepen.io/codepenplayer/pen/JjQjGMB)
 - [accent-color](https://codepen.io/codepenplayer/pen/mdZdEKK)
 
-[Glasses demo desktop.webm](https://github.com/GitHubPlayerZero/web-layout-single-hand/assets/65072506/24a45a05-c70e-4d58-b932-063e10851e9f)
+[Demo - 桌機](https://github.com/GitHubPlayerZero/web-layout-single-hand/assets/65072506/24a45a05-c70e-4d58-b932-063e10851e9f)
+
+[Demo - 手機 > 平板](https://github.com/GitHubPlayerZero/web-layout-single-hand/assets/65072506/1902a310-564b-47c5-a170-eaa5ac477548)
 
 <br>
