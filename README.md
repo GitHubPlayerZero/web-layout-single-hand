@@ -8,7 +8,7 @@
 [Website](https://githubplayerzero.github.io/web-layout-single-hand/w1/)｜[Code](https://github.com/GitHubPlayerZero/web-layout-single-hand/tree/main/w1)｜[設計稿](https://www.figma.com/file/eB5X8OYO4whPx3btCZdr3w/2023-%E5%88%87%E7%89%88%E5%A4%8F%E5%AD%A3%E7%8F%AD-W1---%E5%80%8B%E4%BA%BA%E5%B1%A5%E6%AD%B7?type=design&node-id=0-1&mode=design&t=Ra2WvqXTBiCNffSe-0)
 
 - 單欄式
-- 風格：語意化
+- 風格：客製化（語意化）
 
 [Demo](https://github.com/GitHubPlayerZero/web-layout-single-hand/assets/65072506/ea97f557-75d7-402d-bb1e-d3ac7b1872d9)
 
@@ -18,7 +18,7 @@
 [Website](https://githubplayerzero.github.io/web-layout-single-hand/w2/)｜[Code](https://github.com/GitHubPlayerZero/web-layout-single-hand/tree/main/w2)｜[設計稿](https://www.figma.com/file/7t6ft6HEHeWkpFs7OQrdKp/2023-%E5%88%87%E7%89%88%E5%A4%8F%E5%AD%A3%E7%8F%AD-W2---%E5%80%8B%E4%BA%BA%E7%B6%B2%E9%A0%81?type=design&node-id=0-1&mode=design&t=4h4kJBnGCzidkXCD-0)
 
 - 多欄式（Flex 排版）
-- 風格：語意化、components、utility（原子化）
+- 風格：客製化（語意化）、components、原子化（utility）
 - 嘗試不寫死寬度，而是透過 CSS 的 `calc()` 計算出百分比，並將重複用到的數值、運算包成變數放到 `:root`。
 
 #### 相關技巧練習範例
@@ -40,7 +40,7 @@
 - 多欄式（Flex 排版）
 - 格線系統
 - RWD：桌機（優先）、平板、手機
-- 風格：components、語意化、utility（原子化）
+- 風格：客製化（語意化）、原子化（utility）、components
 
 #### 相關技巧練習範例
 - [resize](https://codepen.io/codepenplayer/pen/JjQjGMB)
